@@ -21,6 +21,14 @@
   opacity: 0.33;
 }
 
+.placeholderify *:not(:has(*)) {
+  opacity: 0.33;
+}
+
+.placeholderify *:has(*) {
+  opacity: 1;
+}
+
 /* Add background with the text color to text elements. */
 .placeholderify p,
 .placeholderify h1,
@@ -31,6 +39,10 @@
 .placeholderify h6,
 .placeholderify span {
   background-color: currentcolor;
+}
+
+mark {
+  background: currentcolor;
 }
 
 /* Make buttons text color the same as the background. */
