@@ -47,4 +47,4 @@ And that's it! 😎
 
 Then, remove the `placeholdify` class and get the real component again!
 
-See this in action in the [example HTML file](examples/index.html).
+See this in action in the [example HTML file](https://murznn.github.io/placeholderify/examples/index.html).
