@@ -53,8 +53,17 @@ mark {
 /* Force images to have a background color and the expected height even if not loaded. */
 .placeholderify img {
   display: inline-block;
-  background-color: gray;
+  background-color: black;
   color: transparent;
+  position: relative;
+}
+
+.placeholderify img::after {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  content: " ";
 }
 
 /* Add animation to the placeholder glow effect. */
