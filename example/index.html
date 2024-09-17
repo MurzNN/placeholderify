@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/gh/MurzNN/placeholderify/dist/placeholderify.css" /> -->
+  <!-- <link rel="stylesheet" media="all" href="../dist/placeholderify.css" /> -->
+  <link rel="stylesheet" media="all" href="../dist/placeholderify.css" />
+</head>
+
+<body>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <h1>Placeholderify example</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex flex-column align-items-center">
+        <h2 class="h6">Original element</h1>
+          <div class="card" style="width: 18rem;">
+            <img src="https://placehold.co/600x400" class="card-img-top" alt="..." style="height: 200px">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+      </div>
+      <div class="col d-flex flex-column align-items-center">
+        <h2 class="h6">Placeholderified element</h2>
+        <div class="card placeholderify" style="width: 18rem;">
+          <img src="https://placehold.co/600x400" class="card-img-top" alt="..." style="height: 200px">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex flex-column align-items-center">
+        <h2 class="h6">Placeholderify toggling</h2>
+        <div class="card placeholderify-container" style="width: 18rem;">
+          <img src="https://placehold.co/600x400" class="card-img-top" alt="..." style="height: 200px">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+         <script type="text/javascript">
+            function toggle() {
+              const containers = document.querySelectorAll('.placeholderify-container').forEach(container => {
+                container.classList.toggle('placeholderify');
+              });
+            }
+          </script>
+        <a href="#" class="btn btn-success m-3" onclick="toggle()">Toggle</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

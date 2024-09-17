@@ -1,19 +1,23 @@
 /* Add a placeholder glow effect to the whole container. */
+.placeholderify {
+  position: relative;
+}
+
 .placeholderify::before {
   position: absolute;
-  inset: 0 0 0 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1;
-  width: 500%;
-  margin-left: -250%;
-  pointer-events: none;
+  width: 100%;
   content: " ";
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 54%) 50% 50%;
-  animation: placeholderify-animation 2s linear infinite;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60%) 50% 50%;
+  animation: placeholderify-animation 0.8s linear infinite;
 }
 
 /* Make all children elements transparent. */
 .placeholderify * {
-  opacity: 0.5;
+  opacity: 0.33;
 }
 
 /* Add background with the text color to text elements. */
@@ -43,18 +47,18 @@
 /* Add animation to the placeholder glow effect. */
 @keyframes placeholderify-animation {
   0% {
-    transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translate3d(30%, 0, 0);
+    transform: translate3d(50%, 0, 0);
   }
 }
 @keyframes placeholderify-animation {
   0% {
-    transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translate3d(30%, 0, 0);
+    transform: translate3d(50%, 0, 0);
   }
 }
 
