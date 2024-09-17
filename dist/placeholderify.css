@@ -1,0 +1,61 @@
+/* Add a placeholder glow effect to the whole container. */
+.placeholderify::before {
+  position: absolute;
+  inset: 0 0 0 50%;
+  z-index: 1;
+  width: 500%;
+  margin-left: -250%;
+  pointer-events: none;
+  content: " ";
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 54%) 50% 50%;
+  animation: placeholderify-animation 2s linear infinite;
+}
+
+/* Make all children elements transparent. */
+.placeholderify * {
+  opacity: 0.5;
+}
+
+/* Add background with the text color to text elements. */
+.placeholderify p,
+.placeholderify h1,
+.placeholderify h2,
+.placeholderify h3,
+.placeholderify h4,
+.placeholderify h5,
+.placeholderify h6,
+.placeholderify span {
+  background-color: currentcolor;
+}
+
+/* Make buttons text color the same as the background. */
+.placeholderify a.btn {
+  color: transparent;
+}
+
+/* Force images to have a background color and the expected height even if not loaded. */
+.placeholderify img {
+  display: inline-block;
+  background-color: gray;
+  color: transparent;
+}
+
+/* Add animation to the placeholder glow effect. */
+@keyframes placeholderify-animation {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+  100% {
+    transform: translate3d(30%, 0, 0);
+  }
+}
+@keyframes placeholderify-animation {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+  100% {
+    transform: translate3d(30%, 0, 0);
+  }
+}
+
+/*# sourceMappingURL=placeholderify.css.map */
