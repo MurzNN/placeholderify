@@ -4,66 +4,72 @@
   pointer-events: none;
   overflow: hidden;
   user-select: none;
+
+
+/* Make all children elements transparent. */
+*:not(.placeholderify-ignore) {
+  opacity: 0.33;
+}
+
+*:not(:has(*), .placeholderify-ignore) {
+  opacity: 0.33;
+}
+
+*:has(*):not(.placeholderify-ignore) {
+  opacity: 1;
 }
 
 /* Add a placeholder glow effect to the whole container. */
-.placeholderify::before {
+  &::before {
   position: absolute;
   inset: 0;
   z-index: 1;
   content: " ";
   background: linear-gradient(to right, rgb(255 255 255 / 0%) 40%, rgb(255 255 255 / 35%) 50%, rgb(255 255 255 / 0%) 60%) 50% 50%;
   animation: placeholderify-animation 0.8s linear infinite;
-}
+  }
 
-/* Make all children elements transparent. */
-.placeholderify * {
-  opacity: 0.33;
-}
 
-.placeholderify *:not(:has(*)) {
-  opacity: 0.33;
-}
+  /* Add background with the text color to text elements. */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    &:not(.placeholderify-ignore) {
+      background-color: currentcolor;
+    }
+  }
 
-.placeholderify *:has(*) {
-  opacity: 1;
-}
+  mark {
+    &:not(.placeholderify-ignore) {
+      background-color: currentcolor;
+    }
+  }
 
-/* Add background with the text color to text elements. */
-.placeholderify p,
-.placeholderify h1,
-.placeholderify h2,
-.placeholderify h3,
-.placeholderify h4,
-.placeholderify h5,
-.placeholderify h6,
-.placeholderify span {
-  background-color: currentcolor;
-}
+  /* Make buttons text color the same as the background. */
+  a.btn:not(.placeholderify-ignore) {
+    color: transparent;
+  }
 
-mark {
-  background: currentcolor;
-}
+  /* Force images to have a background color and the expected height even if not loaded. */
+  img:not(.placeholderify-ignore) {
+    display: inline-block;
+    background-color: black;
+    color: transparent;
+    position: relative;
 
-/* Make buttons text color the same as the background. */
-.placeholderify a.btn {
-  color: transparent;
-}
-
-/* Force images to have a background color and the expected height even if not loaded. */
-.placeholderify img {
-  display: inline-block;
-  background-color: black;
-  color: transparent;
-  position: relative;
-}
-
-.placeholderify img::after {
-  display: block;
-  position: absolute;
-  inset: 0;
-  background-color: black;
-  content: " ";
+    &::after {
+      display: block;
+      position: absolute;
+      inset: 0;
+      background-color: black;
+      content: " ";
+    }
+  }
 }
 
 /* Add animation to the placeholder glow effect. */

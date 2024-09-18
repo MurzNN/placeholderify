@@ -4,9 +4,21 @@
   pointer-events: none;
   overflow: hidden;
   user-select: none;
+  /* Make all children elements transparent. */
+  /* Add a placeholder glow effect to the whole container. */
+  /* Add background with the text color to text elements. */
+  /* Make buttons text color the same as the background. */
+  /* Force images to have a background color and the expected height even if not loaded. */
 }
-
-/* Add a placeholder glow effect to the whole container. */
+.placeholderify *:not(.placeholderify-ignore) {
+  opacity: 0.33;
+}
+.placeholderify *:not(:has(*), .placeholderify-ignore) {
+  opacity: 0.33;
+}
+.placeholderify *:has(*):not(.placeholderify-ignore) {
+  opacity: 1;
+}
 .placeholderify::before {
   position: absolute;
   inset: 0;
@@ -15,50 +27,29 @@
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60%) 50% 50%;
   animation: placeholderify-animation 0.8s linear infinite;
 }
-
-/* Make all children elements transparent. */
-.placeholderify * {
-  opacity: 0.33;
-}
-
-.placeholderify *:not(:has(*)) {
-  opacity: 0.33;
-}
-
-.placeholderify *:has(*) {
-  opacity: 1;
-}
-
-/* Add background with the text color to text elements. */
-.placeholderify p,
-.placeholderify h1,
-.placeholderify h2,
-.placeholderify h3,
-.placeholderify h4,
-.placeholderify h5,
-.placeholderify h6,
-.placeholderify span {
+.placeholderify p:not(.placeholderify-ignore),
+.placeholderify h1:not(.placeholderify-ignore),
+.placeholderify h2:not(.placeholderify-ignore),
+.placeholderify h3:not(.placeholderify-ignore),
+.placeholderify h4:not(.placeholderify-ignore),
+.placeholderify h5:not(.placeholderify-ignore),
+.placeholderify h6:not(.placeholderify-ignore),
+.placeholderify span:not(.placeholderify-ignore) {
   background-color: currentcolor;
 }
-
-mark {
-  background: currentcolor;
+.placeholderify mark:not(.placeholderify-ignore) {
+  background-color: currentcolor;
 }
-
-/* Make buttons text color the same as the background. */
-.placeholderify a.btn {
+.placeholderify a.btn:not(.placeholderify-ignore) {
   color: transparent;
 }
-
-/* Force images to have a background color and the expected height even if not loaded. */
-.placeholderify img {
+.placeholderify img:not(.placeholderify-ignore) {
   display: inline-block;
   background-color: black;
   color: transparent;
   position: relative;
 }
-
-.placeholderify img::after {
+.placeholderify img:not(.placeholderify-ignore)::after {
   display: block;
   position: absolute;
   inset: 0;

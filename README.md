@@ -1,4 +1,4 @@
-# Placeholderify CSS library.
+# Placeholderify CSS library
 
 A CSS library to make real HTML elements look like placeholders to simplify
 making placeholders of elements when the data is loading.
@@ -21,8 +21,8 @@ to placeholders.
 Let's imagine that you have a Bootstrap Card like this:
 
 ```html
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<div class="card">
+  <img src="..." class="card-img-top">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -33,8 +33,8 @@ Let's imagine that you have a Bootstrap Card like this:
 
 And to make a placeholder from it, you should just add the `placeholdify` class:
 ```html
-<div class="card placeholderify" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<div class="card placeholderify" >
+  <img src="..." class="card-img-top">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -43,7 +43,7 @@ And to make a placeholder from it, you should just add the `placeholdify` class:
 </div>
 ```
 
-And that's it! 😎
+And that's it! 😎 No code duplication, no separate templates for placeholders!
 
 Then, remove the `placeholdify` class and get the real component again!
 
