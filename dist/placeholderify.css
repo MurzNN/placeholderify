@@ -11,10 +11,10 @@
   /* Force images to have a background color and the expected height even if not loaded. */
 }
 .placeholderify *:not(.placeholderify-ignore) {
-  opacity: 0.33;
+  opacity: var(--placeholderify-opacity, 0.33);
 }
 .placeholderify *:not(:has(*), .placeholderify-ignore) {
-  opacity: 0.33;
+  opacity: var(--placeholderify-opacity, 0.33);
 }
 .placeholderify *:has(*):not(.placeholderify-ignore) {
   opacity: 1;
@@ -24,8 +24,11 @@
   inset: 0;
   z-index: 1;
   content: " ";
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60%) 50% 50%;
-  animation: placeholderify-animation 0.8s linear infinite;
+  background: var(--placeholderify-cover-background, linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60%) 50% 50%);
+  animation-name: var(--placeholderify-cover-animation-name, placeholderify-animation);
+  animation-duration: var(--placeholderify-cover-animation-duration, 0.5s);
+  animation-timing-function: var(--placeholderify-cover-animation-timing-function, linear);
+  animation-iteration-count: infinite;
 }
 .placeholderify p:not(.placeholderify-ignore),
 .placeholderify h1:not(.placeholderify-ignore),
@@ -35,7 +38,7 @@
 .placeholderify h5:not(.placeholderify-ignore),
 .placeholderify h6:not(.placeholderify-ignore),
 .placeholderify span:not(.placeholderify-ignore) {
-  background-color: currentcolor;
+  background-color: var(--placeholderify-background-color, currentcolor);
 }
 .placeholderify mark:not(.placeholderify-ignore) {
   background-color: currentcolor;
@@ -45,7 +48,7 @@
 }
 .placeholderify img:not(.placeholderify-ignore) {
   display: inline-block;
-  background-color: black;
+  background-color: var(--placeholderify-background-color, black);
   color: transparent;
   position: relative;
 }
@@ -53,7 +56,7 @@
   display: block;
   position: absolute;
   inset: 0;
-  background-color: black;
+  background-color: var(--placeholderify-background-color, black);
   content: " ";
 }
 
@@ -66,13 +69,6 @@
     transform: translate3d(50%, 0, 0);
   }
 }
-@keyframes placeholderify-animation {
-  0% {
-    transform: translate3d(-50%, 0, 0);
-  }
-  100% {
-    transform: translate3d(50%, 0, 0);
-  }
-}
+
 
 /*# sourceMappingURL=placeholderify.css.map */

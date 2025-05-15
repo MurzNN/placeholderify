@@ -5,30 +5,31 @@
   overflow: hidden;
   user-select: none;
 
-
-/* Make all children elements transparent. */
-*:not(.placeholderify-ignore) {
-  opacity: 0.33;
-}
-
-*:not(:has(*), .placeholderify-ignore) {
-  opacity: 0.33;
-}
-
-*:has(*):not(.placeholderify-ignore) {
-  opacity: 1;
-}
-
-/* Add a placeholder glow effect to the whole container. */
-  &::before {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  content: " ";
-  background: linear-gradient(to right, rgb(255 255 255 / 0%) 40%, rgb(255 255 255 / 35%) 50%, rgb(255 255 255 / 0%) 60%) 50% 50%;
-  animation: placeholderify-animation 0.8s linear infinite;
+  /* Make all children elements transparent. */
+  *:not(.placeholderify-ignore) {
+    opacity: var(--placeholderify-opacity, 0.33);
   }
 
+  *:not(:has(*), .placeholderify-ignore) {
+    opacity: var(--placeholderify-opacity, 0.33);
+  }
+
+  *:has(*):not(.placeholderify-ignore) {
+    opacity: 1;
+  }
+
+  /* Add a placeholder glow effect to the whole container. */
+  &::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    content: " ";
+    background: var(--placeholderify-cover-background, linear-gradient(to right, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 60%) 50% 50%);
+    animation-name: var(--placeholderify-cover-animation-name, placeholderify-animation);
+    animation-duration: var(--placeholderify-cover-animation-duration, 0.5s);
+    animation-timing-function: var(--placeholderify-cover-animation-timing-function, linear);
+    animation-iteration-count: infinite;
+  }
 
   /* Add background with the text color to text elements. */
   p,
@@ -40,13 +41,13 @@
   h6,
   span {
     &:not(.placeholderify-ignore) {
-      background-color: currentcolor;
+      background-color: var(--placeholderify-background-color, currentcolor);
     }
   }
 
   mark {
     &:not(.placeholderify-ignore) {
-      background-color: currentcolor;
+      background-color: var(--placeholderify-background-color, currentcolor);
     }
   }
 
@@ -58,7 +59,7 @@
   /* Force images to have a background color and the expected height even if not loaded. */
   img:not(.placeholderify-ignore) {
     display: inline-block;
-    background-color: black;
+    background-color: var(--placeholderify-background-color, black);
     color: transparent;
     position: relative;
 
@@ -66,23 +67,13 @@
       display: block;
       position: absolute;
       inset: 0;
-      background-color: black;
+      background-color: var(--placeholderify-background-color, black);
       content: " ";
     }
   }
 }
 
 /* Add animation to the placeholder glow effect. */
-@keyframes placeholderify-animation {
-  0% {
-    transform: translate3d(-50%, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(50%, 0, 0);
-  }
-}
-
 @keyframes placeholderify-animation {
   0% {
     transform: translate3d(-50%, 0, 0);

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Placeholderify CSS library usage example for toggling placeholders</title>
+  <title>Placeholderify CSS library usage and toggle example</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/gh/MurzNN/placeholderify/dist/placeholderify.css" /> -->
-  <!-- <link rel="stylesheet" media="all" href="../dist/placeholderify.css" /> -->
   <link rel="stylesheet" media="all" href="../dist/placeholderify.css" />
-         <script type="text/javascript">
-            function toggle(context) {
-              const containers = document.querySelectorAll(`${context} .placeholderify-container`).forEach(container => {
-                container.classList.toggle('placeholderify');
-              });
-            }
-          </script>
+  <script type="text/javascript">
+    function toggle(event, selector) {
+      const containers = document.querySelectorAll(`${selector} .placeholderify-container`).forEach(container => {
+        container.classList.toggle('placeholderify');
+        console.log(container, `toggle ${selector}`);
+      });
+      console.log(`toggle ${selector}`);
+      event.preventDefault();
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const templateContainer = document.querySelector('.template-container');
+      if (templateContainer) {
+        document.querySelectorAll('.template-target').forEach(target => {
+          const clonedContainer = templateContainer.cloneNode(true);
+          target.appendChild(clonedContainer);
+        });
+      }
+    });
+  </script>
 </head>
-
 <body>
   <div class="container text-center">
     <div class="row">
@@ -26,10 +32,30 @@
         <h1>Placeholderify CSS usage example</h1>
       </div>
     </div>
-    <div class="row">
-      <div class="example-1 col d-flex flex-column align-items-center">
-        <h2 class="h6">Original element</h1>
-          <div class="card">
+
+    <div class="example-default">
+      <div class="row">
+        <div class="col">
+          <h2>Default design</h2>
+        </div>
+      </div>
+      <div class="row template-container">
+        <div class="example-1 col d-flex flex-column align-items-center">
+          <h2 class="h6">Original element</h1>
+            <div class="card">
+              <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's
+                  content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+        </div>
+        <div class="example-2 col d-flex flex-column align-items-center">
+          <h2 class="h6">Placeholderified element</h2>
+          <div class="card placeholderify">
             <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -38,46 +64,106 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-      </div>
-      <div class="example-2 col d-flex flex-column align-items-center">
-        <h2 class="h6">Placeholderified element</h2>
-        <div class="card placeholderify">
-          <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
         </div>
-      </div>
-      <div class="example-3 col d-flex flex-column align-items-center">
-        <h2 class="h6">Placeholderify toggling</h2>
-        <div class="card placeholderify-container">
-          <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="example-3 col d-flex flex-column align-items-center">
+          <h2 class="h6">Placeholderify toggling</h2>
+          <div class="card placeholderify-container">
+            <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
+          <a href="#" class="btn btn-success m-3" onclick="toggle(event, '.example-3')">Toggle</a>
         </div>
-        <a href="#" class="btn btn-success m-3" onclick="toggle('.example-3')">Toggle</a>
-      </div>
-      <div class="example-4 col d-flex flex-column align-items-center">
-        <h2 class="h6">Per-word placeholders and ignore</h2>
-        <div class="card placeholderify-container placeholderify">
-          <img src="https://placehold.co/600x400" class="card-img-top placeholderify-ignore" alt="...">
-          <div class="card-body">
-            <h5 class="card-title placeholderify-ignore"><span>Card</span> <span>title</span></h5>
-            <p class="card-text placeholderify-ignore"><span>Some</span> <span>quick</span> example <span>text</span> <span>to</span> <span>build</span> <span>on</span> <span>the</span> <span>card</span> <span>title</span> <span>and</span> <span>make</span> <span>up</span> <span>the</span> <span>bulk</span> <span>of</span> <span>the</span> <span>card's</span> <span>content.</span></p>
-            <a href="#" class="btn btn-primary placeholderify-ignore"><span>Go</span> <span>somewhere</span></a>
+        <div class="example-4 col d-flex flex-column align-items-center">
+          <h2 class="h6">Per-word placeholders and ignore</h2>
+          <div class="card placeholderify-container placeholderify">
+            <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title placeholderify-ignore"><span>Card</span> <span>title</span></h5>
+              <p class="card-text placeholderify-ignore"><span>Some</span> <span>quick</span> example <span>text</span>
+                <span>to</span> <span>build</span> <span>on</span> <span>the</span> <span>card</span> <span>title</span>
+                <span>and</span> <span>make</span> <span>up</span> <span>the</span> <span>bulk</span> <span>of</span>
+                <span>the</span> <span>card's</span> <span>content.</span>
+              </p>
+              <a href="#" class="btn btn-primary placeholderify-ignore"><span>Go</span> <span>somewhere</span></a>
+            </div>
           </div>
+          <a href="#" class="btn btn-success m-3" onclick="toggle(event, '.example-4')">Toggle</a>
         </div>
-        <a href="#" class="btn btn-success m-3" onclick="toggle('.example-4')">Toggle</a>
       </div>
     </div>
-  </div>
-</body>
 
+    <div class="example-opacity">
+      <div class="row">
+        <div class="col">
+          <h2>Custom opacity example</h2>
+        </div>
+      </div>
+      <style>
+        .example-opacity {
+          --placeholderify-opacity: 10%;
+        }
+      </style>
+      <div class="row template-target"></div>
+
+      <div class="example-filter">
+        <div class="row">
+          <div class="col">
+            <h2>Custom filter</h2>
+          </div>
+        </div>
+        <style>
+          .example-filter {
+            --placeholderify-background-color: transparent;
+            --placeholderify-opacity: 80%;
+          }
+
+          .example-filter .placeholderify {
+            filter: blur(4px);
+            transition: filter 0.5s;
+          }
+        </style>
+        <div class="row template-target"></div>
+      </div>
+
+      <div class="example-color">
+        <div class="row">
+          <div class="col">
+            <h2>Custom color</h2>
+          </div>
+        </div>
+        <style>
+          .example-color .placeholderify *:not(.placeholderify-ignore) {
+            --placeholderify-background-color: #007bff;
+          }
+        </style>
+        <div class="row template-target"></div>
+      </div>
+
+      <div class="example-animation">
+        <div class="row">
+          <div class="col">
+            <h2>Custom animation</h2>
+          </div>
+        </div>
+        <style>
+          @keyframes my-animation {
+            0%   { background: rgb(255, 255, 255, 50%); }
+            50%  { background: rgb(255, 255, 255, 0%);  }
+            100% { background: rgb(255, 255, 255, 50%); }
+          }
+          .example-animation {
+            --placeholderify-cover-animation-name: my-animation;
+            --placeholderify-cover-animation-duration: 2s
+          }
+        </style>
+        <div class="row template-target"></div>
+      </div>
+
+    </div>
+</body>
 </html>
