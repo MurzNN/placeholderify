@@ -113,7 +113,7 @@
       <div class="example-filter">
         <div class="row">
           <div class="col">
-            <h2>Custom filter</h2>
+            <h2>Custom filter example</h2>
           </div>
         </div>
         <style>
@@ -133,12 +133,16 @@
       <div class="example-color">
         <div class="row">
           <div class="col">
-            <h2>Custom color</h2>
+            <h2>Custom color example</h2>
           </div>
         </div>
         <style>
           .example-color .placeholderify *:not(.placeholderify-ignore) {
-            --placeholderify-background-color: #007bff;
+            --placeholderify-background-color: green;
+          }
+          /* Additional fix for the forcibly colored backgrounds */
+          .example-color .placeholderify a.btn:not(.placeholderify-ignore) {
+            background-color: green;
           }
         </style>
         <div class="row template-target"></div>
