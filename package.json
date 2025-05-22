@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "lint": "stylelint src",
-    "build": "stylelint src && sass src:dist && (find dist -name \"*.css\" -not -name \"*.min.css\" -exec sh -c 'for file; do npx cleancss -o \"${file%.css}.min.css\" \"$file\"; done' sh {} +)"
+    "build": "stylelint src && sass src:dist && (find dist -name \"*.css\" -not -name \"*.min.css\" -exec sh -c 'for file; do npx cleancss -o \"${file%.css}.min.css\" \"$file\"; done' sh {} +)",
+    "watch": "sass --watch src:dist & (while inotifywait -e modify -r dist; do find dist -name \"*.css\" -not -name \"*.min.css\" -exec sh -c 'for file; do npx cleancss -o \"${file%.css}.min.css\" \"$file\"; done' sh {} +; done)"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
@@ -11,6 +12,6 @@
     "scss-lint": "^0.0.0",
     "stylelint": "^16.9.0",
     "stylelint-config-standard": "^36.0.1",
-    "stylelint-scss": "^6.6.0"
+    "stylelint-scss": "^6.12.0"
   }
 }

@@ -32,8 +32,11 @@ Let's imagine that you have a Bootstrap Card like this:
 </div>
 ```
 
-And to make a placeholder from it, you should just add the `placeholdify` class:
+And to make a placeholder from it, you should just add a CSS library and the
+`placeholdify` class to the component:
 ```html
+<link rel="stylesheet" media="all" href="//murznn.github.io/placeholderify/dist/placeholderify.min.css" />
+
 <div class="card placeholderify" >
   <img src="..." class="card-img-top">
   <div class="card-body">

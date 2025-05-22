@@ -1,6 +1,11 @@
 {
   "extends": "stylelint-config-standard",
   "plugins": [
-    "stylelint-scss"
-  ]
+    "stylelint-scss",
+    "stylelint-color-format"
+  ],
+  "rules": {
+    "no-invalid-double-slash-comments": null,
+    "alpha-value-notation": "percentage"
+  }
 }
