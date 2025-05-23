@@ -1,4 +1,4 @@
-name: Default Workflow
+name: CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  lint:
+  checks:
     runs-on: ubuntu-latest
 
     steps:
