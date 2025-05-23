@@ -1,17 +1,10 @@
-.placeholderify {
+.phfy-i {
   position: relative;
   pointer-events: none;
   overflow: hidden;
   user-select: none;
-  /* &::after {
-     display: block;
-     content: '';
-     position: absolute;
-     inset: 0;
-     background-color: var(--placeholderify-background-color, black);
-   } */
 }
-.placeholderify::before {
+.phfy-i::before {
   content: "";
   background-color: white;
   inset: 0;
@@ -27,7 +20,7 @@
     transform: translateX(100%);
   }
 }
-.placeholderify::after {
+.phfy-i::after {
   position: absolute;
   inset: 0;
   content: "";
@@ -37,68 +30,64 @@
   animation-timing-function: var(--placeholderify-cover-animation-timing-function, linear);
   animation-iteration-count: infinite;
 }
-.placeholderify .placeholderify-force {
+.phfy-i .placeholderify-force {
   background-color: var(--placeholderify-background-color, currentcolor);
   border-color: var(--placeholderify-background-color, currentcolor);
   color: var(--placeholderify-background-color, currentcolor);
 }
-.placeholderify .placeholderify-force * {
+.phfy-i .placeholderify-force * {
   visibility: hidden;
 }
-.placeholderify a.btn,
-.placeholderify a.button {
+.phfy-i a.btn,
+.phfy-i a.button {
   border-color: var(--placeholderify-background-color, currentcolor);
 }
-.placeholderify a.btn:not(.placeholderify-ignore),
-.placeholderify a.button:not(.placeholderify-ignore) {
+.phfy-i a.btn:not(.placeholderify-ignore),
+.phfy-i a.button:not(.placeholderify-ignore) {
   color: transparent;
 }
-.placeholderify a.btn *,
-.placeholderify a.button * {
+.phfy-i a.btn *,
+.phfy-i a.button * {
   visibility: hidden;
 }
-.placeholderify p:not(.placeholderify-ignore),
-.placeholderify h1:not(.placeholderify-ignore),
-.placeholderify h2:not(.placeholderify-ignore),
-.placeholderify h3:not(.placeholderify-ignore),
-.placeholderify h4:not(.placeholderify-ignore),
-.placeholderify h5:not(.placeholderify-ignore),
-.placeholderify h6:not(.placeholderify-ignore),
-.placeholderify mark:not(.placeholderify-ignore) {
+.phfy-i p:not(.placeholderify-ignore),
+.phfy-i h1:not(.placeholderify-ignore),
+.phfy-i h2:not(.placeholderify-ignore),
+.phfy-i h3:not(.placeholderify-ignore),
+.phfy-i h4:not(.placeholderify-ignore),
+.phfy-i h5:not(.placeholderify-ignore),
+.phfy-i h6:not(.placeholderify-ignore),
+.phfy-i mark:not(.placeholderify-ignore) {
   background-color: var(--placeholderify-background-color, currentcolor);
   border-color: var(--placeholderify-background-color, currentcolor);
   color: var(--placeholderify-background-color, currentcolor);
 }
-.placeholderify p:not(.placeholderify-ignore) *,
-.placeholderify h1:not(.placeholderify-ignore) *,
-.placeholderify h2:not(.placeholderify-ignore) *,
-.placeholderify h3:not(.placeholderify-ignore) *,
-.placeholderify h4:not(.placeholderify-ignore) *,
-.placeholderify h5:not(.placeholderify-ignore) *,
-.placeholderify h6:not(.placeholderify-ignore) *,
-.placeholderify mark:not(.placeholderify-ignore) * {
+.phfy-i p:not(.placeholderify-ignore) *,
+.phfy-i h1:not(.placeholderify-ignore) *,
+.phfy-i h2:not(.placeholderify-ignore) *,
+.phfy-i h3:not(.placeholderify-ignore) *,
+.phfy-i h4:not(.placeholderify-ignore) *,
+.phfy-i h5:not(.placeholderify-ignore) *,
+.phfy-i h6:not(.placeholderify-ignore) *,
+.phfy-i mark:not(.placeholderify-ignore) * {
   visibility: hidden;
 }
-.placeholderify img:not(.placeholderify-ignore)::before {
+.phfy-i img:not(.placeholderify-ignore)::before {
   content: "";
   background-color: var(--placeholderify-background-color, currentcolor);
   position: absolute;
   inset: 0;
   vertical-align: middle;
 }
-.placeholderify .placeholderify-ignore span:not(.placeholderify-ignore),
-.placeholderify .placeholderify-ignore a:not(.placeholderify-ignore) {
+.phfy-i .placeholderify-ignore span:not(.placeholderify-ignore),
+.phfy-i .placeholderify-ignore a:not(.placeholderify-ignore) {
   background-color: var(--placeholderify-background-color, currentcolor);
   border-color: var(--placeholderify-background-color, currentcolor);
   color: var(--placeholderify-background-color, currentcolor);
 }
-.placeholderify .placeholderify-ignore span:not(.placeholderify-ignore) *,
-.placeholderify .placeholderify-ignore a:not(.placeholderify-ignore) * {
+.phfy-i .placeholderify-ignore span:not(.placeholderify-ignore) *,
+.phfy-i .placeholderify-ignore a:not(.placeholderify-ignore) * {
   visibility: hidden;
 }
-.placeholderify img:not(.placeholderify-ignore) {
-  filter: brightness(0);
-  position: relative;
-}
 
-/*# sourceMappingURL=placeholderify.css.map */
+/*# sourceMappingURL=phfy-i.css.map */

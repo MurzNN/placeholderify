@@ -1,7 +1,7 @@
 # Placeholderify CSS library
 
 A pure CSS library that automatically transforms real HTML elements into
-placeholders to simplify loading states, without requiring any JavaScript and
+placeholders to simplify loading states, without requiring any JavaScript or
 efforts from your side.
 
 The classic approach requires designing separate HTML code for placeholders when
@@ -23,7 +23,7 @@ Let's imagine that you have a Bootstrap Card like this:
 
 ```html
 <div class="card">
-  <img src="..." class="card-img-top">
+  <img src="https://picsum.photos/600/400" class="card-img-top" alt="My image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -38,7 +38,7 @@ And to make a placeholder from it, you should just add a CSS library and the
 <link rel="stylesheet" media="all" href="//murznn.github.io/placeholderify/dist/placeholderify.min.css" />
 
 <div class="card placeholderify" >
-  <img src="..." class="card-img-top">
+  <img src="https://picsum.photos/600/400" class="card-img-top" alt="My image">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -51,6 +51,10 @@ And that's it! 😎 No code duplication and no separate templates for
 placeholders!
 
 To restore the real component, simply remove the `placeholderify` class.
+
+Also, the library provides a placeholder for reloading element, when you don't
+need to hide the current content, for that cases include the `reloadify.css`
+file and use the `reloadify` class.
 
 For a live demonstration and customization options, check out the
 [example HTML file](https://murznn.github.io/placeholderify/examples/index.html).
@@ -76,7 +80,7 @@ options:
 - `--placeholderify-cover-animation-timing-function`: Timing function for the glow
   animation (default: linear)
 
-### Usage Example
+**Usage Example:**
 
 ```css
 .my-custom-placeholder {
@@ -86,5 +90,25 @@ options:
 }
 ```
 
+### Excluding specific elements
+
 To exclude specific elements from being transformed into placeholders, add the
 `placeholderify-ignore` class to them.
+
+
+### Keeping images
+
+In some cases you probably want to keep images visible in the placeholders.
+To keep only specific images visible, use the `placeholderify-ignore` class.
+To make all images visible - use the `placeholderify-img.css` file and the
+`placeholderify-img` class. See
+[example HTML file with keeping images](https://murznn.github.io/placeholderify/examples/with-images.html).
+
+
+### Shorten names
+
+To make your HTML code more compact, the library provides shorten versions of
+classes in the correspoindig CSS files:
+- `placeholderify` » `phfy`
+- `reloadify` » `rlfy`
+- `placeholderify-img` » `phfy-i`

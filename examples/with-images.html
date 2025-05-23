@@ -6,13 +6,13 @@
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Use loading the CSS file from CDN on your websites -->
-  <!-- <link rel="stylesheet" media="all" href="//murznn.github.io/placeholderify/dist/placeholderify.min.css" /> -->
-  <link rel="stylesheet" media="all" href="../dist/placeholderify.css" />
+  <!-- <link rel="stylesheet" media="all" href="//murznn.github.io/placeholderify/dist/placeholderify-img.min.css" /> -->
+  <link rel="stylesheet" media="all" href="../dist/placeholderify-img.css" />
   <link rel="stylesheet" media="all" href="../dist/reloadify.css" />
   <script type="text/javascript">
     function togglePhfy(event, selector) {
       const containers = document.querySelectorAll(`${selector} .placeholderify-container`).forEach(container => {
-        container.classList.toggle('placeholderify');
+        container.classList.toggle('placeholderify-img');
       });
       event.preventDefault();
     }
@@ -64,7 +64,7 @@
         </div>
         <div class="example-2 col d-flex flex-column align-items-center">
           <h2 class="h6">Placeholderified element</h2>
-          <div class="card placeholderify">
+          <div class="card placeholderify-img">
             <img src="https://picsum.photos/600/400" class="card-img-top" alt="My image">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -92,7 +92,7 @@
         </div>
         <div class="example-4 col d-flex flex-column align-items-center">
           <h2 class="h6">Per-word placeholders and ignore</h2>
-          <div class="card placeholderify-container placeholderify">
+          <div class="card placeholderify-container placeholderify-img">
             <img src="https://picsum.photos/600/400" class="card-img-top" alt="My image">
             <div class="card-body">
               <h5 class="card-title placeholderify-ignore"><span>Card</span> <span>title</span></h5>

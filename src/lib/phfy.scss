@@ -1,0 +1,6 @@
+@use '../includes/sets';
+
+// Apply general styles to the container to make the glow effect right.
+.phfy {
+  @include sets.placeholderify-default
+}
