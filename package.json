@@ -1,6 +1,25 @@
 {
   "name": "placeholderify",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A CSS library to make real HTML elements look like placeholders to simplify making placeholders of elements when the data is loading or reloading.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MurzNN/placeholderify"
+  },
+  "keywords": [
+    "placeholder",
+    "placeholderify",
+    "placeholify",
+    "loader",
+    "reloader",
+    "skeleton",
+    "progress"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MurzNN/placeholderify/issues"
+  },
+  "homepage": "https://murznn.github.io/placeholderify/",
   "scripts": {
     "lint": "stylelint src dist",
     "build": "${npm_execpath} run lint && sass src/lib:dist && ${npm_execpath} run minify-css",
