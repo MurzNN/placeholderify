@@ -56,8 +56,24 @@ Also, the library provides a placeholder for reloading element, when you don't
 need to hide the current content, for that cases include the `reloadify.css`
 file and use the `reloadify` class.
 
-For a live demonstration and customization options, check out the
-[example HTML file](https://murznn.github.io/placeholderify/examples/index.html).
+For a live demonstration and customization options, check out the [example HTML
+file](https://murznn.github.io/placeholderify/examples/index.html).
+
+## Usage
+
+The library provides several separate CSS files with different approaches:
+
+- `placeholderify.min.css` and `placeholderify` class: a default approach which
+  replaces everything inside the element by squares. And the shortened version:
+  `phfy.min.css` and `phfy` class.
+
+- `placeholderify-img.min.css` and `placeholderify-img` class: the same as
+  `placeholderify` but keeps the images visible. And the shortened version:
+  `phfy-i.min.css` and `phfy-i` class.
+
+- `reloadify.min.css` and `reloadify` class: an approach for reloading elements
+  with actual content. Do not hides the texts, just adds a cover and animation.
+  And the shortened version:  `rlfy.min.css` and `rlfy` class.
 
 ## Customization
 
@@ -69,16 +85,16 @@ options:
   (default: 0.33)
 
 ### Background and Animation
-- `--placeholderify-background-color`: Sets the background color for text elements
-  and images (default: currentcolor for text, black for images)
+- `--placeholderify-background-color`: Sets the background color for text
+  elements and images (default: currentcolor for text, black for images)
 - `--placeholderify-cover-background`: Defines the gradient used for the glow
   effect (default: linear gradient from transparent to semi-transparent white)
-- `--placeholderify-cover-animation-name`: The name of the animation for the glow
-  effect (default: placeholderify-animation)
+- `--placeholderify-cover-animation-name`: The name of the animation for the
+  glow effect (default: placeholderify-animation)
 - `--placeholderify-cover-animation-duration`: Duration of the glow animation
   (default: 0.5s)
-- `--placeholderify-cover-animation-timing-function`: Timing function for the glow
-  animation (default: linear)
+- `--placeholderify-cover-animation-timing-function`: Timing function for the
+  glow animation (default: linear)
 
 **Usage Example:**
 
@@ -98,11 +114,11 @@ To exclude specific elements from being transformed into placeholders, add the
 
 ### Keeping images
 
-In some cases you probably want to keep images visible in the placeholders.
-To keep only specific images visible, use the `placeholderify-ignore` class.
-To make all images visible - use the `placeholderify-img.css` file and the
-`placeholderify-img` class. See
-[example HTML file with keeping images](https://murznn.github.io/placeholderify/examples/with-images.html).
+In some cases you probably want to keep images visible in the placeholders. To
+keep only specific images visible, use the `placeholderify-ignore` class. To
+make all images visible - use the `placeholderify-img.css` file and the
+`placeholderify-img` class. See [example HTML file with keeping
+images](https://murznn.github.io/placeholderify/examples/with-images.html).
 
 
 ### Shorten names
