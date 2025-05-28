@@ -1,0 +1,34 @@
+.reloadify {
+  position: relative;
+  pointer-events: none;
+  overflow: hidden;
+  user-select: none;
+}
+.reloadify::before {
+  content: "";
+  background-color: white;
+  inset: 0;
+  opacity: var(--placeholderify-opacity, 70%);
+  position: absolute;
+  z-index: 1;
+}
+@keyframes placeholderify-animation {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.reloadify::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: var(--placeholderify-cover-background, linear-gradient(to right, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 40%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 35%, transparent) 50%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 60%) 50% 50%);
+  animation-name: var(--placeholderify-cover-animation-name, placeholderify-animation);
+  animation-duration: var(--placeholderify-cover-animation-duration, 0.5s);
+  animation-timing-function: var(--placeholderify-cover-animation-timing-function, linear);
+  animation-iteration-count: infinite;
+}
+
+/*# sourceMappingURL=reloadify.css.map */

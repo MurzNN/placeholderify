@@ -1,0 +1,5 @@
+@use '../includes/sets';
+
+.rlfy {
+  @include sets.placeholderify-coating;
+}

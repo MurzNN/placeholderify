@@ -1,0 +1,5 @@
+@use '../includes/sets';
+
+.reloadify {
+  @include sets.placeholderify-coating;
+}

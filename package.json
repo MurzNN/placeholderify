@@ -2,15 +2,19 @@
   "name": "placeholderify",
   "version": "0.1.0",
   "scripts": {
-    "lint": "stylelint src",
-    "build": "stylelint src && sass src:dist && (find dist -name \"*.css\" -not -name \"*.min.css\" -exec sh -c 'for file; do npx cleancss -o \"${file%.css}.min.css\" \"$file\"; done' sh {} +)"
+    "lint": "stylelint src dist",
+    "build": "${npm_execpath} run lint && sass src/lib:dist && ${npm_execpath} run minify-css",
+    "watch": "sass --watch src/lib:dist & nodemon --watch dist --ext css --ignore \"*.min.css\" --exec \"${npm_execpath} run minify-css\"",
+    "minify-css": "find dist -name \"*.css\" -not -name \"*.min.css\" -exec sh -c 'for file; do ${npm_execpath} cleancss -o \"${file%.css}.min.css\" \"$file\"; done' sh {} +"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
+    "nodemon": "^3.1.10",
     "sass": "^1.78.0",
-    "scss-lint": "^0.0.0",
     "stylelint": "^16.9.0",
+    "stylelint-config-recommended-scss": "^15.0.1",
     "stylelint-config-standard": "^36.0.1",
-    "stylelint-scss": "^6.6.0"
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.12.0"
   }
 }

@@ -1,0 +1,19 @@
+@use './base';
+
+@mixin placeholderify-coating() {
+  @include base.placeholderify-element;
+  @include base.placeholderify-cover;
+  @include base.placeholderify-animation;
+}
+
+@mixin placeholderify-keep-img() {
+  @include placeholderify-coating;
+  @include base.placeholderify-force;
+  @include base.placeholderify-placeholders-buttons;
+  @include base.placeholderify-placeholders;
+}
+
+@mixin placeholderify-default() {
+  @include placeholderify-keep-img();
+  @include base.placeholderify-placeholders-img;
+}

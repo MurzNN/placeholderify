@@ -1,0 +1,5 @@
+@use '../includes/sets';
+
+.placeholderify-img {
+  @include sets.placeholderify-keep-img;
+}
