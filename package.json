@@ -21,8 +21,9 @@
   },
   "homepage": "https://murznn.github.io/placeholderify/",
   "scripts": {
-    "lint": "stylelint src dist",
-    "build": "${npm_execpath} run lint && sass src/lib:dist && ${npm_execpath} run minify-css",
+    "lint": "stylelint src",
+    "lint-dist": "stylelint dist",
+    "build": "${npm_execpath} run lint && sass src/lib:dist && ${npm_execpath} run minify-css && ${npm_execpath} run lint-dist",
     "watch": "sass --watch src/lib:dist & nodemon --watch dist --ext css --ignore \"*.min.css\" --exec \"${npm_execpath} run minify-css\"",
     "minify-css": "find dist -name \"*.css\" -not -name \"*.min.css\" -exec sh -c 'for file; do ${npm_execpath} cleancss -o \"${file%.css}.min.css\" \"$file\"; done' sh {} +"
   },

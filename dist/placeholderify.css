@@ -6,11 +6,11 @@
 }
 .placeholderify::before {
   content: "";
+  z-index: var(--placeholderify-cover-z-index, 100);
   background-color: white;
   inset: 0;
   opacity: var(--placeholderify-opacity, 70%);
   position: absolute;
-  z-index: 1;
 }
 @keyframes placeholderify-animation {
   from {
@@ -21,9 +21,10 @@
   }
 }
 .placeholderify::after {
+  content: "";
   position: absolute;
   inset: 0;
-  content: "";
+  z-index: var(--placeholderify-glow-z-index, 110);
   background: var(--placeholderify-cover-background, linear-gradient(to right, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 40%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 35%, transparent) 50%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 60%) 50% 50%);
   animation-name: var(--placeholderify-cover-animation-name, placeholderify-animation);
   animation-duration: var(--placeholderify-cover-animation-duration, 0.5s);
@@ -36,26 +37,6 @@
   color: var(--placeholderify-background-color, currentcolor);
 }
 .placeholderify .placeholderify-force * {
-  visibility: hidden;
-}
-.placeholderify span:not(.placeholderify-ignore),
-.placeholderify a:not(.placeholderify-ignore) {
-  background-color: var(--placeholderify-background-color, currentcolor);
-  border-color: var(--placeholderify-background-color, currentcolor);
-  color: var(--placeholderify-background-color, currentcolor);
-}
-.placeholderify span:not(.placeholderify-ignore) *,
-.placeholderify a:not(.placeholderify-ignore) * {
-  visibility: hidden;
-}
-.placeholderify .placeholderify-ignore span:not(.placeholderify-ignore),
-.placeholderify .placeholderify-ignore a:not(.placeholderify-ignore) {
-  background-color: var(--placeholderify-background-color, currentcolor);
-  border-color: var(--placeholderify-background-color, currentcolor);
-  color: var(--placeholderify-background-color, currentcolor);
-}
-.placeholderify .placeholderify-ignore span:not(.placeholderify-ignore) *,
-.placeholderify .placeholderify-ignore a:not(.placeholderify-ignore) * {
   visibility: hidden;
 }
 .placeholderify p:not(.placeholderify-ignore),
@@ -84,6 +65,26 @@
   position: absolute;
   inset: 0;
   vertical-align: middle;
+}
+.placeholderify span:not(.placeholderify-ignore),
+.placeholderify a:not(.placeholderify-ignore) {
+  background-color: var(--placeholderify-background-color, currentcolor);
+  border-color: var(--placeholderify-background-color, currentcolor);
+  color: var(--placeholderify-background-color, currentcolor);
+}
+.placeholderify span:not(.placeholderify-ignore) *,
+.placeholderify a:not(.placeholderify-ignore) * {
+  visibility: hidden;
+}
+.placeholderify .placeholderify-ignore span:not(.placeholderify-ignore),
+.placeholderify .placeholderify-ignore a:not(.placeholderify-ignore) {
+  background-color: var(--placeholderify-background-color, currentcolor);
+  border-color: var(--placeholderify-background-color, currentcolor);
+  color: var(--placeholderify-background-color, currentcolor);
+}
+.placeholderify .placeholderify-ignore span:not(.placeholderify-ignore) *,
+.placeholderify .placeholderify-ignore a:not(.placeholderify-ignore) * {
+  visibility: hidden;
 }
 .placeholderify img:not(.placeholderify-ignore) {
   filter: brightness(0);

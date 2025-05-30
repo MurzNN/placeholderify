@@ -13,8 +13,10 @@
 }
 
 @mixin placeholderify-elements-all($packageName: 'placeholderify') {
-  @include placeholderify-elements-inline($packageName);
+  @include placeholderify-coating($packageName);
+  @include base.placeholderify-force($packageName);
   @include base.placeholderify-placeholders-blocks($packageName);
+  @include base.placeholderify-placeholders-inline($packageName);
 }
 
 @mixin placeholderify-elements-all-with-images($packageName: 'placeholderify') {

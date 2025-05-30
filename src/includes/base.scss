@@ -5,16 +5,15 @@
   overflow: hidden;
   user-select: none;
 }
-
 // Adds a lighten effect to the whole element.
 @mixin placeholderify-cover($packageName: 'placeholderify') {
   &::before {
     content: "";
+    z-index: var(--placeholderify-cover-z-index, 100);
     background-color: white;
     inset: 0;
     opacity: var(--placeholderify-opacity, 70%);
     position: absolute;
-    z-index: 1;
   }
 }
 
@@ -32,9 +31,10 @@
 
   // Adds a placeholder glow effect to the whole container.
   &::after {
+    content: "";
     position: absolute;
     inset: 0;
-    content: "";
+    z-index: var(--placeholderify-glow-z-index, 110);
     background: var(--placeholderify-cover-background, linear-gradient(to right, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 40%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 35%, transparent) 50%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 60%) 50% 50%);
     animation-name: var(--placeholderify-cover-animation-name, placeholderify-animation);
     animation-duration: var(--placeholderify-cover-animation-duration, 0.5s);
@@ -44,7 +44,7 @@
 }
 
 // Forces element to be placeholderified.
-@mixin _placeholderify-force_styles($packageName: 'placeholderify') {
+@mixin _placeholderify-force_background($packageName: 'placeholderify') {
   background-color: var(--placeholderify-background-color, currentcolor);
   border-color: var(--placeholderify-background-color, currentcolor);
   color: var(--placeholderify-background-color, currentcolor);
@@ -57,7 +57,7 @@
 
 @mixin placeholderify-force($packageName: 'placeholderify') {
   .#{$packageName}-force {
-    @include _placeholderify-force_styles;
+    @include _placeholderify-force_background;
   }
 }
 
@@ -71,7 +71,7 @@
   h5,
   h6 {
     &:not(.#{$packageName}-ignore) {
-      @include _placeholderify-force_styles($packageName: 'placeholderify');
+      @include _placeholderify-force_background($packageName: 'placeholderify');
     }
   }
 
@@ -91,7 +91,7 @@
   span,
   a {
     &:not(.#{$packageName}-ignore) {
-      @include _placeholderify-force_styles($packageName: 'placeholderify');
+      @include _placeholderify-force_background($packageName: 'placeholderify');
     }
   }
 
@@ -100,7 +100,7 @@
     span,
     a {
       &:not(.#{$packageName}-ignore) {
-        @include _placeholderify-force_styles;
+        @include _placeholderify-force_background;
       }
     }
   }

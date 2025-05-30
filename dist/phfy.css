@@ -6,11 +6,11 @@
 }
 .phfy::before {
   content: "";
+  z-index: var(--placeholderify-cover-z-index, 100);
   background-color: white;
   inset: 0;
   opacity: var(--placeholderify-opacity, 70%);
   position: absolute;
-  z-index: 1;
 }
 @keyframes phfy-animation {
   from {
@@ -21,9 +21,10 @@
   }
 }
 .phfy::after {
+  content: "";
   position: absolute;
   inset: 0;
-  content: "";
+  z-index: var(--placeholderify-glow-z-index, 110);
   background: var(--placeholderify-cover-background, linear-gradient(to right, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 40%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 35%, transparent) 50%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 60%) 50% 50%);
   animation-name: var(--placeholderify-cover-animation-name, placeholderify-animation);
   animation-duration: var(--placeholderify-cover-animation-duration, 0.5s);
@@ -36,26 +37,6 @@
   color: var(--placeholderify-background-color, currentcolor);
 }
 .phfy .phfy-force * {
-  visibility: hidden;
-}
-.phfy span:not(.phfy-ignore),
-.phfy a:not(.phfy-ignore) {
-  background-color: var(--placeholderify-background-color, currentcolor);
-  border-color: var(--placeholderify-background-color, currentcolor);
-  color: var(--placeholderify-background-color, currentcolor);
-}
-.phfy span:not(.phfy-ignore) *,
-.phfy a:not(.phfy-ignore) * {
-  visibility: hidden;
-}
-.phfy .phfy-ignore span:not(.phfy-ignore),
-.phfy .phfy-ignore a:not(.phfy-ignore) {
-  background-color: var(--placeholderify-background-color, currentcolor);
-  border-color: var(--placeholderify-background-color, currentcolor);
-  color: var(--placeholderify-background-color, currentcolor);
-}
-.phfy .phfy-ignore span:not(.phfy-ignore) *,
-.phfy .phfy-ignore a:not(.phfy-ignore) * {
   visibility: hidden;
 }
 .phfy p:not(.phfy-ignore),
@@ -84,6 +65,26 @@
   position: absolute;
   inset: 0;
   vertical-align: middle;
+}
+.phfy span:not(.phfy-ignore),
+.phfy a:not(.phfy-ignore) {
+  background-color: var(--placeholderify-background-color, currentcolor);
+  border-color: var(--placeholderify-background-color, currentcolor);
+  color: var(--placeholderify-background-color, currentcolor);
+}
+.phfy span:not(.phfy-ignore) *,
+.phfy a:not(.phfy-ignore) * {
+  visibility: hidden;
+}
+.phfy .phfy-ignore span:not(.phfy-ignore),
+.phfy .phfy-ignore a:not(.phfy-ignore) {
+  background-color: var(--placeholderify-background-color, currentcolor);
+  border-color: var(--placeholderify-background-color, currentcolor);
+  color: var(--placeholderify-background-color, currentcolor);
+}
+.phfy .phfy-ignore span:not(.phfy-ignore) *,
+.phfy .phfy-ignore a:not(.phfy-ignore) * {
+  visibility: hidden;
 }
 .phfy img:not(.phfy-ignore) {
   filter: brightness(0);

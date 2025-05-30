@@ -73,11 +73,11 @@ The library provides several separate CSS files with different approaches:
 
 - `placeholderify-img.min.css` and `placeholderify-img` class: the same as
   `placeholderify` but keeps the images visible. And the shortened version:
-  `phfy-i.min.css` and `phfy-i` class.
+  `phfyi.min.css` and `phfyi` class.
 
 - `placeholderify-lines.min.css` and `placeholderify-lines` class: coverts only
-   inline elements to blocks. And the shortened version: `phfy-l.min.css` and
-   `phfy-l` class.
+   inline elements to blocks. And the shortened version: `phfyl.min.css` and
+   `phfyl` class.
 
 ## Customization
 
@@ -131,4 +131,5 @@ To make your HTML code more compact, the library provides shorten versions of
 classes in the correspoindig CSS files:
 - `placeholderify` » `phfy`
 - `reloadify` » `rlfy`
-- `placeholderify-img` » `phfy-i`
+- `placeholderify-img` » `phfyi`
+- `placeholderify-lines` » `phfyl`
