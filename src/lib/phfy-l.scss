@@ -1,0 +1,5 @@
+@use '../includes/sets';
+
+.phfy-l {
+  @include sets.placeholderify-elements-inline;
+}

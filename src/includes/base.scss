@@ -48,7 +48,6 @@
   background-color: var(--placeholderify-background-color, currentcolor);
   border-color: var(--placeholderify-background-color, currentcolor);
   color: var(--placeholderify-background-color, currentcolor);
-  color: transparent;
 
   // Makes all inner elements invisible.
   * {
@@ -62,21 +61,17 @@
   }
 }
 
-
 // Converts common content block elements to colored squares.
-@mixin placeholderify-placeholders($packageName: 'placeholderify') {
+@mixin placeholderify-placeholders-blocks($packageName: 'placeholderify') {
   p,
   h1,
   h2,
   h3,
   h4,
   h5,
-  h6,
-  mark,
-  span,
-  a {
+  h6 {
     &:not(.#{$packageName}-ignore) {
-      @include _placeholderify-force_styles;
+      @include _placeholderify-force_styles($packageName: 'placeholderify');
     }
   }
 
@@ -89,6 +84,16 @@
       vertical-align: middle;
     }
   }
+}
+
+// Converts common content block elements to colored squares.
+@mixin placeholderify-placeholders-inline($packageName: 'placeholderify') {
+  span,
+  a {
+    &:not(.#{$packageName}-ignore) {
+      @include _placeholderify-force_styles($packageName: 'placeholderify');
+    }
+  }
 
   // Force converts inline blocks to colored squares if the parent block is ignored.
   .#{$packageName}-ignore {
@@ -99,24 +104,6 @@
       }
     }
   }
-}
-
-// Makes buttons text color the same as the background.
-@mixin placeholderify-placeholders-buttons($packageName: 'placeholderify') {
-  // a.btn,
-  // a.button {
-  //   border-color: var(--placeholderify-background-color, currentcolor);
-
-  //   // Hides the text from buttons.
-  //   &:not(.#{$packageName}-ignore) {
-  //     color: transparent;
-  //   }
-
-  //   // Makes all inner elements invisible.
-  //   * {
-  //     visibility: hidden;
-  //   }
-  // }
 }
 
 @mixin placeholderify-placeholders-img($packageName: 'placeholderify') {

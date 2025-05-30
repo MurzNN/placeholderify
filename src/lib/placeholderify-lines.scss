@@ -1,0 +1,5 @@
+@use '../includes/sets';
+
+.placeholderify-lines {
+  @include sets.placeholderify-elements-inline;
+}

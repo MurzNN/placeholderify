@@ -1,5 +1,5 @@
 @use '../includes/sets';
 
 .phfy-i {
-  @include sets.placeholderify-keep-img('phfy');
+  @include sets.placeholderify-elements-all('phfy');
 }

@@ -67,13 +67,17 @@ The library provides several separate CSS files with different approaches:
   replaces everything inside the element by squares. And the shortened version:
   `phfy.min.css` and `phfy` class.
 
+- `reloadify.min.css` and `reloadify` class: an approach for reloading elements
+  with actual content. Do not hides the texts, just adds a cover and animation.
+  And the shortened version:  `rlfy.min.css` and `rlfy` class.
+
 - `placeholderify-img.min.css` and `placeholderify-img` class: the same as
   `placeholderify` but keeps the images visible. And the shortened version:
   `phfy-i.min.css` and `phfy-i` class.
 
-- `reloadify.min.css` and `reloadify` class: an approach for reloading elements
-  with actual content. Do not hides the texts, just adds a cover and animation.
-  And the shortened version:  `rlfy.min.css` and `rlfy` class.
+- `placeholderify-lines.min.css` and `placeholderify-lines` class: coverts only
+   inline elements to blocks. And the shortened version: `phfy-l.min.css` and
+   `phfy-l` class.
 
 ## Customization
 

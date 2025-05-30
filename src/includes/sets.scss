@@ -6,14 +6,18 @@
   @include base.placeholderify-animation($packageName);
 }
 
-@mixin placeholderify-keep-img($packageName: 'placeholderify') {
+@mixin placeholderify-elements-inline($packageName: 'placeholderify') {
   @include placeholderify-coating($packageName);
   @include base.placeholderify-force($packageName);
-  @include base.placeholderify-placeholders-buttons($packageName);
-  @include base.placeholderify-placeholders($packageName);
+  @include base.placeholderify-placeholders-inline($packageName);
 }
 
-@mixin placeholderify-default($packageName: 'placeholderify') {
-  @include placeholderify-keep-img($packageName);
+@mixin placeholderify-elements-all($packageName: 'placeholderify') {
+  @include placeholderify-elements-inline($packageName);
+  @include base.placeholderify-placeholders-blocks($packageName);
+}
+
+@mixin placeholderify-elements-all-with-images($packageName: 'placeholderify') {
+  @include placeholderify-elements-all($packageName);
   @include base.placeholderify-placeholders-img($packageName);
 }
