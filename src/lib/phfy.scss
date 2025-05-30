@@ -2,5 +2,5 @@
 
 // Apply general styles to the container to make the glow effect right.
 .phfy {
-  @include sets.placeholderify-default
+  @include sets.placeholderify-default('phfy')
 }

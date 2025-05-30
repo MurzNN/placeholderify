@@ -3,13 +3,6 @@
   pointer-events: none;
   overflow: hidden;
   user-select: none;
-  /* &::after {
-     display: block;
-     content: '';
-     position: absolute;
-     inset: 0;
-     background-color: var(--placeholderify-background-color, black);
-   } */
 }
 .placeholderify::before {
   content: "";
@@ -64,7 +57,8 @@
 .placeholderify h4:not(.placeholderify-ignore),
 .placeholderify h5:not(.placeholderify-ignore),
 .placeholderify h6:not(.placeholderify-ignore),
-.placeholderify mark:not(.placeholderify-ignore) {
+.placeholderify mark:not(.placeholderify-ignore),
+.placeholderify span:not(.placeholderify-ignore) {
   background-color: var(--placeholderify-background-color, currentcolor);
   border-color: var(--placeholderify-background-color, currentcolor);
   color: var(--placeholderify-background-color, currentcolor);
@@ -76,7 +70,8 @@
 .placeholderify h4:not(.placeholderify-ignore) *,
 .placeholderify h5:not(.placeholderify-ignore) *,
 .placeholderify h6:not(.placeholderify-ignore) *,
-.placeholderify mark:not(.placeholderify-ignore) * {
+.placeholderify mark:not(.placeholderify-ignore) *,
+.placeholderify span:not(.placeholderify-ignore) * {
   visibility: hidden;
 }
 .placeholderify img:not(.placeholderify-ignore)::before {

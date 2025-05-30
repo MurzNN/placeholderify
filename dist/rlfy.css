@@ -12,7 +12,7 @@
   position: absolute;
   z-index: 1;
 }
-@keyframes placeholderify-animation {
+@keyframes rlfy-animation {
   from {
     transform: translateX(-100%);
   }
@@ -25,7 +25,7 @@
   inset: 0;
   content: "";
   background: var(--placeholderify-cover-background, linear-gradient(to right, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 40%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 35%, transparent) 50%, color-mix(in srgb, var(--placeholderify-animation-color, #FFF) 0%, transparent) 60%) 50% 50%);
-  animation-name: var(--placeholderify-cover-animation-name, placeholderify-animation);
+  animation-name: var(--placeholderify-cover-animation-name, rlfy-animation);
   animation-duration: var(--placeholderify-cover-animation-duration, 0.5s);
   animation-timing-function: var(--placeholderify-cover-animation-timing-function, linear);
   animation-iteration-count: infinite;

@@ -57,7 +57,8 @@
 .placeholderify-img h4:not(.placeholderify-ignore),
 .placeholderify-img h5:not(.placeholderify-ignore),
 .placeholderify-img h6:not(.placeholderify-ignore),
-.placeholderify-img mark:not(.placeholderify-ignore) {
+.placeholderify-img mark:not(.placeholderify-ignore),
+.placeholderify-img span:not(.placeholderify-ignore) {
   background-color: var(--placeholderify-background-color, currentcolor);
   border-color: var(--placeholderify-background-color, currentcolor);
   color: var(--placeholderify-background-color, currentcolor);
@@ -69,7 +70,8 @@
 .placeholderify-img h4:not(.placeholderify-ignore) *,
 .placeholderify-img h5:not(.placeholderify-ignore) *,
 .placeholderify-img h6:not(.placeholderify-ignore) *,
-.placeholderify-img mark:not(.placeholderify-ignore) * {
+.placeholderify-img mark:not(.placeholderify-ignore) *,
+.placeholderify-img span:not(.placeholderify-ignore) * {
   visibility: hidden;
 }
 .placeholderify-img img:not(.placeholderify-ignore)::before {
