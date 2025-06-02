@@ -1,5 +1,5 @@
 @use '../includes/sets';
 
 .placeholderify {
-  @include sets.placeholderify-default;
+  @include sets.placeholderify-elements-all-with-images;
 }

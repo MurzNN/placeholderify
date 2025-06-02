@@ -1,5 +1,5 @@
 @use '../includes/sets';
 
 .reloadify {
-  @include sets.placeholderify-coating;
+  @include sets.placeholderify-coating('reloadify');
 }

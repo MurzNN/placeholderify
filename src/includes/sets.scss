@@ -1,19 +1,25 @@
 @use './base';
 
-@mixin placeholderify-coating() {
-  @include base.placeholderify-element;
-  @include base.placeholderify-cover;
-  @include base.placeholderify-animation;
+@mixin placeholderify-coating($packageName: 'placeholderify') {
+  @include base.placeholderify-element($packageName);
+  @include base.placeholderify-cover($packageName);
+  @include base.placeholderify-animation($packageName);
 }
 
-@mixin placeholderify-keep-img() {
-  @include placeholderify-coating;
-  @include base.placeholderify-force;
-  @include base.placeholderify-placeholders-buttons;
-  @include base.placeholderify-placeholders;
+@mixin placeholderify-elements-inline($packageName: 'placeholderify') {
+  @include placeholderify-coating($packageName);
+  @include base.placeholderify-force($packageName);
+  @include base.placeholderify-placeholders-inline($packageName);
 }
 
-@mixin placeholderify-default() {
-  @include placeholderify-keep-img();
-  @include base.placeholderify-placeholders-img;
+@mixin placeholderify-elements-all($packageName: 'placeholderify') {
+  @include placeholderify-coating($packageName);
+  @include base.placeholderify-force($packageName);
+  @include base.placeholderify-placeholders-blocks($packageName);
+  @include base.placeholderify-placeholders-inline($packageName);
+}
+
+@mixin placeholderify-elements-all-with-images($packageName: 'placeholderify') {
+  @include placeholderify-elements-all($packageName);
+  @include base.placeholderify-placeholders-img($packageName);
 }
