@@ -1,10 +1,10 @@
 {
   "name": "placeholderify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CSS library to make real HTML elements look like placeholders to simplify making placeholders of elements when the data is loading or reloading.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MurzNN/placeholderify"
+    "url": "git+https://github.com/MurzNN/placeholderify.git"
   },
   "keywords": [
     "placeholder",
